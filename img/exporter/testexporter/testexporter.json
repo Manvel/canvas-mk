@@ -1,0 +1,19 @@
+{% load checkfolder %} { {% for sprite in allSprites %} {% if sprite.trimmedName|issame %}
+,{"frame":{
+"x":{{sprite.frameRect.x}},
+"y":{{sprite.frameRect.y}},
+"w":{{sprite.frameRect.width}},
+"h":{{sprite.frameRect.height}}
+}}
+{% else %} {% if sprite.trimmedName|isfirst %} {% else %}
+	],
+{% endif %}
+"{{sprite.trimmedName|getname}}":[
+{"frame":{
+"x":{{sprite.frameRect.x}},
+"y":{{sprite.frameRect.y}},
+"w":{{sprite.frameRect.width}},
+"h":{{sprite.frameRect.height}}
+}} 
+{% endif %} {% if not forloop.last %} {% endif %} {% endfor %}
+]}
