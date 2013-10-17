@@ -15,7 +15,6 @@ window.onload = function() {
 								scene.animate();
 								character.eventBindings();
 								
-								var snd = new Audio("media/den_pobedy.mp3"); // buffers automatically when created
 								snd.play();
 							});
 						});
