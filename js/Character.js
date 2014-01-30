@@ -40,8 +40,8 @@ Character.prototype.load = function(callback) {
 	          }
 	    };
 	    xobj.send(null);
-	}
-}
+	};
+};
 
 Character.prototype.eventBindings = function() {
 	var character = this;
@@ -76,7 +76,7 @@ Character.prototype.eventBindings = function() {
 				character.lowPunch();
 				break;
 		}
-	}
+	};
 	window.onkeyup = function(e) {
 		if(!character.inAir()) {
 			character.stage = "stance1";
@@ -128,8 +128,8 @@ Character.prototype.eventBindings = function() {
 			character.y += 50;
 		}
 		//character.vy = 0;
-	}
-}
+	};
+};
 
 Character.prototype.moveRight = function() {
 	console.log("moving right");
@@ -142,14 +142,14 @@ Character.prototype.moveRight = function() {
 		return;
 	}
 	this.stage = "walking";
-}
+};
 
 Character.prototype.moveLeft = function() {
 	console.log("moving left");
 	this.stage = "walking";
 	this.iskeyDown = true;
 	this.vx = -5;
-}
+};
 
 Character.prototype.jump = function() {
 	console.log("jump");
@@ -164,7 +164,7 @@ Character.prototype.jump = function() {
 	this.stage = "jump-place";
 	this.stopFrame = 2;
 	
-}
+};
 
 Character.prototype.block = function() {
 	this.stage = "block";
@@ -176,7 +176,7 @@ Character.prototype.block = function() {
 	} else {
 		this.stage = "block";
 	}
-}
+};
 
 Character.prototype.highPunch = function() {
 	this.stage = "punch-high";
@@ -191,7 +191,7 @@ Character.prototype.highPunch = function() {
 	} else {
 		this.stage = "punch-high";
 	}
-}
+};
 
 Character.prototype.lowPunch = function() {
 	this.iskeyDown = true;
@@ -203,7 +203,7 @@ Character.prototype.lowPunch = function() {
 	}
 	
 	
-}
+};
 
 Character.prototype.highKick = function() {
 	this.iskeyDown = true;
@@ -217,7 +217,7 @@ Character.prototype.highKick = function() {
 	} else {
 		this.stage = "kick-high";
 	}
-}
+};
 
 Character.prototype.lowKick = function() {
 	this.iskeyDown = true;
@@ -233,7 +233,7 @@ Character.prototype.lowKick = function() {
 	} else {
 		this.stage = "kick-low";
 	}
-}
+};
 
 Character.prototype.duck = function() {
 	this.stage = "duck1";
@@ -241,7 +241,7 @@ Character.prototype.duck = function() {
 	this.iskeyDown = true;
 	this.stopFrame = 2;
 	this.y += 50;
-}
+};
 
 Character.prototype.inAir = function() {
 	if(this.y < 300) {
@@ -260,7 +260,7 @@ Character.prototype.inAir = function() {
 		this.vx = 0;
 		return false;
 	}
-}
+};
 
 
 Character.prototype.draw = function(scene) {
@@ -291,4 +291,4 @@ Character.prototype.draw = function(scene) {
 		console.log("should stop");
 		this.frame -= 1;
 	}
-}
+};
